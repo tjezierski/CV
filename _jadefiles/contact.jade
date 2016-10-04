@@ -1,0 +1,9 @@
+.contact__wrapper    
+  .contact__form
+    form(method="post", name="contact_form", action="contact-form-handler.php")
+      input(type="text", class="field--inactive", placeholder="Imię", name="name", required="true", maxlenght="255")
+      input(type="email", class="field--inactive", placeholder="Twój email", name="email", required="true", maxlenght="255")
+      textarea(type="textarea", class="field--inactive", placeholder="Treść wiadomości", name="message", required="true")
+      button(type="submit", class="btn--inactive", placeholder="Wyślij") Wyślij
+
+.footer__copyrights Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb procesu rekrutacji, zgodnie z Ustawą z dn. 29.08.97 r. o Ochronie Danych Osobowych Dz. Ust. nr 133 poz. 883
