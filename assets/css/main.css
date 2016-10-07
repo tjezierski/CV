@@ -423,6 +423,15 @@ section.portfolio::after {
     background-position: center center;
     background-repeat: no-repeat; }
 
+.portfolio__link--content {
+  margin: 0 auto;
+  padding: 25px; }
+
+.portfolio__link--loader {
+  margin: 0 auto;
+  padding-top: 25px;
+  display: block; }
+
 .contact__wrapper {
   display: -ms-flexbox;
   display: flex;

@@ -3,72 +3,24 @@
     "id": 0,
     "name": "Dolor veniam commodo",
     "description": "Consectetur qui exercitation ipsum id nisi nisi exercitation in enim est consequat.",
-    "source": "assets/img/1.jpg"
+    "image": "1.jpg"
   },
   {
     "id": 1,
     "name": "Sunt ut aute ea anim",
     "description": "Non minim mollit velit nisi ad Lorem. Ullamco in fugiat quis dolor in quis cupidatat.",
-    "source": "assets/img/2.jpg"
+    "image": "2.jpg"
   },
   {
     "id": 2,
     "name": "Nulla fugiat ad",
     "description": "Ut ea duis mollit occaecat labore amet commodo amet.",
-    "source": "assets/img/3.jpg"
+    "image": "3.jpg"
   },
   {
     "id": 3,
     "name": "Dolore occaecat",
     "description": "In non in in enim aute.",
-    "source": "assets/img/4.jpg"
-  },
-  {
-    "id": 4,
-    "name": "Consequat occaecat",
-    "description": "Nostrud incididunt aliqua veniam reprehenderit nulla duis.",
-    "source": "assets/img/5.jpg"
-  },
-  {
-    "id": 5,
-    "name": "Cillum pariatur",
-    "description": "Culpa consectetur id do magna aute anim dolore.",
-    "source": "assets/img/6.jpg"
-  },
-  {
-    "id": 6,
-    "name": "Ad aliqua",
-    "description": "Dolore deserunt dolore laborum nisi voluptate irure labore do.",
-    "source": "assets/img/7.jpg"
-  },
-  {
-    "id": 7,
-    "name": "Dolor veniam commodo",
-    "description": "Consectetur qui exercitation ipsum id nisi nisi exercitation in enim est consequat.",
-    "source": "assets/img/8.jpg"
-  },
-  {
-    "id": 8,
-    "name": "Sunt ut aute ea anim",
-    "description": "Non minim mollit velit nisi ad Lorem. Ullamco in fugiat quis dolor in quis cupidatat.",
-    "source": "assets/img/9.jpg"
-  },
-  {
-    "id": 9,
-    "name": "Nulla fugiat ad",
-    "description": "Ut ea duis mollit occaecat labore amet commodo amet.",
-    "source": "assets/img/10.jpg"
-  },
-  {
-    "id": 10,
-    "name": "Dolore occaecat",
-    "description": "In non in in enim aute.",
-    "source": "assets/img/11.jpg"
-  },
-  {
-    "id": 11,
-    "name": "Consequat occaecat",
-    "description": "Nostrud incididunt aliqua veniam reprehenderit nulla duis.",
-    "source": "assets/img/12.jpg"
+    "image": "4.jpg"
   }
 ]

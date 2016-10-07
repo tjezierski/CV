@@ -67,12 +67,6 @@ section.skills
 
 section.portfolio
   h1.title Portfolio
-  //- .container
-  //-   .main-header
-  //-     img(style="display: none" class="spinner" src="../assets/img/loader.gif" alt="loader")
-  //-     a(href="#").next.btn.btn-default Więcej
-  //-   .gallery
-  //- h1.title Portfolio
   .grid
     - var i = 0;
     while (i++ < 10)
@@ -83,6 +77,8 @@ section.portfolio
         .thumb-title {{post.title}}
         aside {{post.describtion}}
     {% endfor %}
+    //- .portfolio__link--content
   a(href="#").portfolio__link--show Pokaż więcej
+  
 section.kontakt
   h1.title Kontakt
