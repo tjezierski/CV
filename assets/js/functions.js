@@ -1,22 +1,48 @@
 $(function(){
-	// Insert loader before Ajax call
-	$(".portfolio__link--show").on('click', function(e){
-		event.preventDefault();
-		// $(".portfolio__link--content").html("<img class='portfolio__link--loader' alt='loading...' src='/assets/img/loader.gif' width='50' height='50' align='center' />");
-		$.get("assets/json/photos.json", addContent);
-	});
 
-	var addContent = function (data){
-		for (i=0; i < data.length; i++){
-			var imageInfo = data[i];
-			var img = $('<img/>').attr("src", "assets/img/"+imageInfo.image);
-			// var div = $('<div></div>').append(img);
-			$('.grid').append(img);
+    var $button = $('.portfolio__link--show');
+    var $grid = $('.grid');
+    var imagesArr = null; // na początku nic tutaj nie mamy
 
-		};
+    function addImages(image) {
+        $('<a href/>').attr('style', 'background-image: url' + '(assets/img/'+image.image).appendTo($grid);
+        $(this).addClass('thumb-link thumb-link-new');
+    }
 
+    $button.on('click', function(event) {
+        event.preventDefault();
 
+        // sprawdzamy czy zdjęcia były już wcześniej pobrane
+        if(imagesArr !== null) {
+            // wyświetliliśmy 8 zdjęć pobranych AJAXem, więc tutaj chcemy wyświetlić pozostałe
+            $.each(imagesArr.slice(8), function(i, image) { // .slice(8) wytnie pierwszych 8 elementów i zwróci nową tablicę z pozostałymi
+                addImages(image);
+            });
 
-	};
+            return; // zakończy i dzięki temu nie wyśle się ponownie AJAX
+        }
 
+        $.ajax({
+            url: 'assets/json/photos.json',
+						dataType: 'json',
+            success: function(images){
+                imagesArr = JSON.parse(images); // przypisujemy pobrane zdjęcia
+
+                $.each(images, function(i, image){
+                    // chcemy wyświetlić powiedzmy 8, pod zmienną i mamy indeks liczony od zera
+
+                    if(i < 8) {
+                        addImages(image);
+                    } else {
+                        return false; // zakończy działanie metody .each, bo działa jak break przy zwykłej pętli
+                    }
+
+                });
+            },
+
+            error: function() {
+                alert('Something went wrong...');
+            }
+        });
+    });
 });

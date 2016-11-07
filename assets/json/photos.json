@@ -1,26 +1,11 @@
-[
-  {
-    "id": 0,
-    "name": "Dolor veniam commodo",
-    "description": "Consectetur qui exercitation ipsum id nisi nisi exercitation in enim est consequat.",
-    "image": "1.jpg"
-  },
-  {
-    "id": 1,
-    "name": "Sunt ut aute ea anim",
-    "description": "Non minim mollit velit nisi ad Lorem. Ullamco in fugiat quis dolor in quis cupidatat.",
-    "image": "2.jpg"
-  },
-  {
-    "id": 2,
-    "name": "Nulla fugiat ad",
-    "description": "Ut ea duis mollit occaecat labore amet commodo amet.",
-    "image": "3.jpg"
-  },
-  {
-    "id": 3,
-    "name": "Dolore occaecat",
-    "description": "In non in in enim aute.",
-    "image": "4.jpg"
-  }
-]
+{
+	"images": [{
+		"image": "1.jpg"
+	}, {
+		"image": "2.jpg"
+	}, {
+		"image": "3.jpg"
+	}, {
+		"image": "4.jpg"
+	}]
+}

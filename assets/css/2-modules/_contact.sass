@@ -13,7 +13,7 @@
 
 @mixin contact
   display: block
-  border: 1px dashed $accent
+  border: 1px solid lighten($accent, 30%)
   padding-left: 20px
   transition: all 0.2s ease-in-out
   &:active,
@@ -24,7 +24,7 @@
 .field--inactive
   @include contact
   box-sizing: border-box
-  font: normal 1.2rem/2rem 'OpenSans'
+  font: normal 1.2rem/2rem 'Open Sans'
   height: 60px
   width: 600px
   max-width: 100%
@@ -40,26 +40,52 @@
 
 .btn--inactive
   @include contact
-  font: normal 1.5rem/1.2rem 'OpenSans'
+  // display: inline-block
+  font: normal 1.3rem/1.2rem 'Open Sans'
   background-color: lighten($accent, 10%)
   color: white
-  width: 150px
+  width: 140px
   height: 60px
   border: none
+  // border: 1px solid green
   padding: 0
   text-align: center
   // font-weight: bold
   margin: 0 auto
   // margin-left: auto
-  margin-bottom: 75px
+  margin-bottom: 10px
   transition: background-color 0.2s ease-in-out
   &:hover,
   &:focus
     background-color: $accent
   @media screen and (min-width: 960px)
-    margin: 0px 0px 100px auto
-    // margin: 0px 0px 75px 0px
+    display: inline-block
+    // margin: 0px 0px 100px auto
+    margin: 0px 0px 75px 0px
     // float: right
+// button::after
+//   margin: 0
+//   padding: 0
+//   content: 'Dziękuje za wiadomość, odpowiem możliwie najszybciej, jak będzie to możliwe.'
+//   display: block
+//   color: black
+//   background-color: pink
+
+.contact__message
+  text-align: center
+  float: none
+  display: block
+  margin: 0 auto
+  font: bold 1rem/60px 'Open Sans'
+  // width: 450px
+  // background-color: pink
+  @media screen and (min-width: 960px)
+    float: right
+
+.success
+  color: #468847
+.error
+  color: #b94a48
 
 // .footer__title
 //   font: bold 1.3em/1.5em Dosis
@@ -67,7 +93,11 @@
 //   color: gray
 
 .footer__copyrights
-  font: normal 0.8rem/1.2rem 'OpenSans'
+  font: normal 0.8rem/1.2rem 'Open Sans'
   text-align: center
   color: gray
-  padding: 0px 0px 20px 0px
+  padding: 50px 0px 20px 0px
+
+input[type="text"], input[type="email"], textarea[type="textarea"]
+  -webkit-appearance: none
+  border-radius: 0

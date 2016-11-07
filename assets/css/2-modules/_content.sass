@@ -8,43 +8,101 @@ h1
   margin: 0
   padding: 0
 
-h1.square
-  display: inline-block
-  padding: 20px
-  font-family: 'OpenSans'
-  font-size: 1.25em
-  font-weight: normal
-  color: white
-  background-color: #7ED321
-  position: absolute
-  top: 0
-  left: 0
-
-  @media screen and (min-width: 768px)
-    width: 100%
-    text-indent: 10%
-    padding: 20px 0px
-    z-index: -1
-
-img.avatar
+section.hero
   display: block
-  width: 250px
-  margin: 0 auto
-  margin-top: 30px
+  // color: #303030
+  // display: flex
+  position: relative
+  // border: 1px solid green
+  width: 100%
+  max-width: 2500px
+  height: 450px
+  background:
+    image: url('../img/me_hero_wall.jpg')
+    position: center center
+    repeat: no-repeat
+    size: cover
+  @media screen and (max-width: 700px)
+    background:
+      position: right -200px center
+      size: cover
+  hero__content
+    border-left: 5px solid $accent
+    padding-left: 10px
+    position: absolute
+    z-index: 1
+    top: 60px
+    left: 75px
+    @media screen and (max-width: 700px)
+      top: 25px
+      left: 15px
+    @media screen and (max-width: 1000px)
+      left: 40px
+    @media screen and (max-width: 414px)
+      left: 15px
+
+  p.name
+    font: bold 2.4em/1.4em 'Open Sans'
+    color: white
+    @media screen and (max-width: 700px)
+      font: bold 1.6em/1.4em 'Open Sans'
+    @media screen and (max-width: 1160px)
+      font: bold 2em/1.4em 'Open Sans'
+
+  p.quote
+    font: normal 1.1em/1.5em 'Playfair Display'
+    width: 560px
+    color: #303030
+    @media screen and (max-width: 700px)
+      display: none
+    @media screen and (max-width: 1120px)
+      font: normal 1em/1.5em 'Playfair Display'
+    @media screen and (max-width: 1000px)
+      width: 430px
+    @media screen and (max-width: 920px)
+      width: 400px
+      font: normal 1.1em/1.5em 'Playfair Display'
+    @media screen and (max-width: 800px)
+      width: 340px
+// h1.square
+//   display: inline-block
+//   padding: 20px
+//   font-family: 'Open Sans'
+//   font-size: 1.25em
+//   font-weight: normal
+//   color: white
+//   background-color: #7ED321
+//   position: absolute
+//   top: 0
+//   left: 0
+//
+//   @media screen and (min-width: 768px)
+//     width: 100%
+//     text-indent: 10%
+//     padding: 20px 0px
+//     z-index: -1
+//
+// img.avatar
+//   display: block
+//   width: 250px
+//   margin: 0 auto
+//   margin-top: 30px
 
 
 
-.name
-  font: bold 1.25em/2em 'OpenSans'
-  // text-align: center
-  color: white
+// .name
+//   font: bold 1.25em/2em 'Open Sans'
+//   // text-align: center
+//   color: white
 
 h1.title
-  display: block
+  display: inline-block
+  // background-color: pink
   margin: 50px 0px 25px 0px
-  font: bold 1.5rem/1.4em 'OpenSans'
+  font: bold 1.5rem/1.4em 'Open Sans'
   text-align: center
-  border-bottom: 1px dashed $accent
+  border-left: 5px solid $accent
+  padding-left: 10px
   @media screen and (min-width: 768px)
     text-align: left
 
@@ -68,13 +126,13 @@ h1.title
 //   overflow: hidden
 
 p
-  font: normal 1rem/1.7em 'OpenSans'
+  font: normal 1rem/1.7em 'Open Sans'
   margin: 0
 
 p.italic
-  font: italic 1rem/1.7em 'OpenSans'
+  font: italic 1rem/1.7em 'Open Sans'
 p.bold
-  font: bold 1rem/1.7em 'OpenSans'
+  font: bold 1rem/1.7em 'Open Sans'
 
 
 .grid
@@ -134,7 +192,7 @@ section.portfolio
   text-align: center
 
   .thumb-title
-    font: bold 1.5rem 'OpenSans'
+    font: bold 1.5rem 'Open Sans'
     @media screen and (min-width: 320px)
       font-size: 0.9rem
     @media screen and (min-width: 400px)
@@ -144,7 +202,7 @@ section.portfolio
 
 
   aside
-    font: italic 1rem/1.4em 'OpenSans'
+    font: italic 1rem/1.4em 'Open Sans'
     @media screen and (min-width: 320px)
       font-size: 0.8rem
     @media screen and (min-width: 400px)
@@ -168,18 +226,18 @@ section.portfolio
     height: 60px
     border-radius: 50%
     background:
-      image: url('/assets/img/arrow-down.svg')
+      image: url('../img/arrow-down.svg')
       position: center center
       repeat: no-repeat
 
-.portfolio__link--content
-  margin: 0 auto
-  padding: 25px
+// .portfolio__link--content
+//   margin: 0 auto
+//   padding: 25px
 
-.portfolio__link--loader
-  margin: 0 auto
-  padding-top: 25px
-  display: block
+// .portfolio__link--loader
+//   margin: 0 auto
+//   padding-top: 25px
+//   display: block
 
 
 

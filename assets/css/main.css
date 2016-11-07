@@ -1,4 +1,5 @@
 @import 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&subset=latin-ext';
+@import 'https://fonts.googleapis.com/css?family=Playfair+Display:400i';
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -272,53 +273,87 @@ h1 {
   margin: 0;
   padding: 0; }
 
-h1.square {
-  display: inline-block;
-  padding: 20px;
-  font-family: 'OpenSans';
-  font-size: 1.25em;
-  font-weight: normal;
-  color: white;
-  background-color: #7ED321;
-  position: absolute;
-  top: 0;
-  left: 0; }
-  @media screen and (min-width: 768px) {
-    h1.square {
-      width: 100%;
-      text-indent: 10%;
-      padding: 20px 0px;
-      z-index: -1; } }
-
-img.avatar {
+section.hero {
   display: block;
-  width: 250px;
-  margin: 0 auto;
-  margin-top: 30px; }
-
-.name {
-  font: bold 1.25em/2em 'OpenSans';
-  color: white; }
+  position: relative;
+  width: 100%;
+  max-width: 2500px;
+  height: 450px;
+  background-image: url("../img/me_hero_wall.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  @media screen and (max-width: 700px) {
+    section.hero {
+      background-position: right -200px center;
+      background-size: cover; } }
+  section.hero hero__content {
+    border-left: 5px solid #10beff;
+    padding-left: 10px;
+    position: absolute;
+    z-index: 1;
+    top: 60px;
+    left: 75px; }
+    @media screen and (max-width: 700px) {
+      section.hero hero__content {
+        top: 25px;
+        left: 15px; } }
+    @media screen and (max-width: 1000px) {
+      section.hero hero__content {
+        left: 40px; } }
+    @media screen and (max-width: 414px) {
+      section.hero hero__content {
+        left: 15px; } }
+  section.hero p.name {
+    font: bold 2.4em/1.4em 'Open Sans';
+    color: white; }
+    @media screen and (max-width: 700px) {
+      section.hero p.name {
+        font: bold 1.6em/1.4em 'Open Sans'; } }
+    @media screen and (max-width: 1160px) {
+      section.hero p.name {
+        font: bold 2em/1.4em 'Open Sans'; } }
+  section.hero p.quote {
+    font: normal 1.1em/1.5em 'Playfair Display';
+    width: 560px;
+    color: #303030; }
+    @media screen and (max-width: 700px) {
+      section.hero p.quote {
+        display: none; } }
+    @media screen and (max-width: 1120px) {
+      section.hero p.quote {
+        font: normal 1em/1.5em 'Playfair Display'; } }
+    @media screen and (max-width: 1000px) {
+      section.hero p.quote {
+        width: 430px; } }
+    @media screen and (max-width: 920px) {
+      section.hero p.quote {
+        width: 400px;
+        font: normal 1.1em/1.5em 'Playfair Display'; } }
+    @media screen and (max-width: 800px) {
+      section.hero p.quote {
+        width: 340px; } }
 
 h1.title {
-  display: block;
+  display: inline-block;
   margin: 50px 0px 25px 0px;
-  font: bold 1.5rem/1.4em 'OpenSans';
+  font: bold 1.5rem/1.4em 'Open Sans';
   text-align: center;
-  border-bottom: 1px dashed #7ED321; }
+  border-left: 5px solid #10beff;
+  padding-left: 10px; }
   @media screen and (min-width: 768px) {
     h1.title {
       text-align: left; } }
 
 p {
-  font: normal 1rem/1.7em 'OpenSans';
+  font: normal 1rem/1.7em 'Open Sans';
   margin: 0; }
 
 p.italic {
-  font: italic 1rem/1.7em 'OpenSans'; }
+  font: italic 1rem/1.7em 'Open Sans'; }
 
 p.bold {
-  font: bold 1rem/1.7em 'OpenSans'; }
+  font: bold 1rem/1.7em 'Open Sans'; }
 
 .grid .item {
   height: 60px;
@@ -381,7 +416,7 @@ section.portfolio::after {
       align-items: center;
   text-align: center; }
   .thumb-meta .thumb-title {
-    font: bold 1.5rem 'OpenSans'; }
+    font: bold 1.5rem 'Open Sans'; }
     @media screen and (min-width: 320px) {
       .thumb-meta .thumb-title {
         font-size: 0.9rem; } }
@@ -392,7 +427,7 @@ section.portfolio::after {
       .thumb-meta .thumb-title {
         font-size: 1.2rem; } }
   .thumb-meta aside {
-    font: italic 1rem/1.4em 'OpenSans'; }
+    font: italic 1rem/1.4em 'Open Sans'; }
     @media screen and (min-width: 320px) {
       .thumb-meta aside {
         font-size: 0.8rem; } }
@@ -419,18 +454,9 @@ section.portfolio::after {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-image: url("/assets/img/arrow-down.svg");
+    background-image: url("../img/arrow-down.svg");
     background-position: center center;
     background-repeat: no-repeat; }
-
-.portfolio__link--content {
-  margin: 0 auto;
-  padding: 25px; }
-
-.portfolio__link--loader {
-  margin: 0 auto;
-  padding-top: 25px;
-  display: block; }
 
 .contact__wrapper {
   display: -ms-flexbox;
@@ -450,11 +476,11 @@ section.portfolio::after {
 
 .field--inactive {
   display: block;
-  border: 1px dashed #7ED321;
+  border: 1px solid #a9e8ff;
   padding-left: 20px;
   transition: all 0.2s ease-in-out;
   box-sizing: border-box;
-  font: normal 1.2rem/2rem 'OpenSans';
+  font: normal 1.2rem/2rem 'Open Sans';
   height: 60px;
   width: 600px;
   max-width: 100%;
@@ -462,7 +488,7 @@ section.portfolio::after {
   margin-bottom: 25px; }
   .field--inactive:active, .field--inactive:focus {
     outline: none;
-    border: 1px solid #7ED321; }
+    border: 1px solid #10beff; }
   .field--inactive:nth-child(3) {
     height: 300px;
     padding-top: 15px; }
@@ -472,31 +498,52 @@ section.portfolio::after {
 
 .btn--inactive {
   display: block;
-  border: 1px dashed #7ED321;
+  border: 1px solid #a9e8ff;
   padding-left: 20px;
   transition: all 0.2s ease-in-out;
-  font: normal 1.5rem/1.2rem 'OpenSans';
-  background-color: #97e245;
+  font: normal 1.3rem/1.2rem 'Open Sans';
+  background-color: #43ccff;
   color: white;
-  width: 150px;
+  width: 140px;
   height: 60px;
   border: none;
   padding: 0;
   text-align: center;
   margin: 0 auto;
-  margin-bottom: 75px;
+  margin-bottom: 10px;
   transition: background-color 0.2s ease-in-out; }
   .btn--inactive:active, .btn--inactive:focus {
     outline: none;
-    border: 1px solid #7ED321; }
+    border: 1px solid #10beff; }
   .btn--inactive:hover, .btn--inactive:focus {
-    background-color: #7ED321; }
+    background-color: #10beff; }
   @media screen and (min-width: 960px) {
     .btn--inactive {
-      margin: 0px 0px 100px auto; } }
+      display: inline-block;
+      margin: 0px 0px 75px 0px; } }
+
+.contact__message {
+  text-align: center;
+  float: none;
+  display: block;
+  margin: 0 auto;
+  font: bold 1rem/60px 'Open Sans'; }
+  @media screen and (min-width: 960px) {
+    .contact__message {
+      float: right; } }
+
+.success {
+  color: #468847; }
+
+.error {
+  color: #b94a48; }
 
 .footer__copyrights {
-  font: normal 0.8rem/1.2rem 'OpenSans';
+  font: normal 0.8rem/1.2rem 'Open Sans';
   text-align: center;
   color: gray;
-  padding: 0px 0px 20px 0px; }
+  padding: 50px 0px 20px 0px; }
+
+input[type="text"], input[type="email"], textarea[type="textarea"] {
+  -webkit-appearance: none;
+  border-radius: 0; }
