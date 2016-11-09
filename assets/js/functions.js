@@ -1,48 +1,54 @@
-$(function(){
+(function($){
 
-    var $button = $('.portfolio__link--show');
-    var $grid = $('.grid');
-    var imagesArr = null; // na początku nic tutaj nie mamy
+// 	var $grid = $('.grid').imagesLoaded(function(){
+// 		$grid.masonry({
+//   columnWidth: '.grid-sizer',
+//   itemSelector: '.grid-item',
+// 	percentPosition: true
+// });
+// });
 
-    function addImages(image) {
-        $('<a href/>').attr('style', 'background-image: url' + '(assets/img/'+image.image).appendTo($grid);
-        $(this).addClass('thumb-link thumb-link-new');
-    }
+	function loopGallery(test, index, item){
+		if(test){
+			var box = $('<a href style="background-image: url('+item.source+'") class="thumb-link grid-item">');
+			var pola = $('<div class="thumb-meta"></div>');
+			var view = $('<div class="thumb-title">'+item.name+'</div>');
+			// var mask = $('<div class="thumb-meta"><div class="thumb-title"'+item.name+'<a href="img/ara_bleu.jpg" class="info fancybox" rel="group" title="'+item.id+'" ></a></div></div>');
 
-    $button.on('click', function(event) {
-        event.preventDefault();
+			$('.grid').prepend(box);
+			box.append(pola);
+			pola.append(view);
+			// view.prepend('<img src="'+item.source+'">');
+			// view.append(mask);
+		}
+	}
 
-        // sprawdzamy czy zdjęcia były już wcześniej pobrane
-        if(imagesArr !== null) {
-            // wyświetliliśmy 8 zdjęć pobranych AJAXem, więc tutaj chcemy wyświetlić pozostałe
-            $.each(imagesArr.slice(8), function(i, image) { // .slice(8) wytnie pierwszych 8 elementów i zwróci nową tablicę z pozostałymi
-                addImages(image);
-            });
+	// $.getJSON('assets/json/photos.json', function(data){
+	// 	$.each(data, function(index, item){
+	// 		loopGallery(index <= 2, index, item);
+	// 	});
+	// });
 
-            return; // zakończy i dzięki temu nie wyśle się ponownie AJAX
-        }
+	$('.portfolio__link--show').on('click', function(event){
+		event.preventDefault();
+		var galleryLength = $('.pola').length;
 
-        $.ajax({
-            url: 'assets/json/photos.json',
-						dataType: 'json',
-            success: function(images){
-                imagesArr = JSON.parse(images); // przypisujemy pobrane zdjęcia
+		$.ajax('assets/json/photos.json', {
+			success: function(data){
+				$.each(data, function(index, item){
+					loopGallery(item.id >= galleryLength && item.id < galleryLength + 4, index, item);
+				});
+			},
+			beforeSend: function(){
+				$('.portfolio__link--show').hide();
+				$('.spinner').fadeIn();
+			},
+			complete: function(){
+				$('.spinner').hide();
+				$('.portfolio__link--show').fadeIn();
+			}
+		});
+	});
 
-                $.each(images, function(i, image){
-                    // chcemy wyświetlić powiedzmy 8, pod zmienną i mamy indeks liczony od zera
 
-                    if(i < 8) {
-                        addImages(image);
-                    } else {
-                        return false; // zakończy działanie metody .each, bo działa jak break przy zwykłej pętli
-                    }
-
-                });
-            },
-
-            error: function() {
-                alert('Something went wrong...');
-            }
-        });
-    });
-});
+})(jQuery);

@@ -25,7 +25,7 @@
   @include contact
   box-sizing: border-box
   font: normal 1.2rem/2rem 'Open Sans'
-  height: 60px
+  height: 50px
   width: 600px
   max-width: 100%
   margin: 0 auto
@@ -35,17 +35,17 @@
    height: 300px
    padding-top: 15px
   @media screen and (min-width: 960px)
-    margin: 0px 0px 25px auto
+    margin: 0px 0px 20px auto
 
 
-.btn--inactive
+.btn--inactive, .btn--download
   @include contact
   // display: inline-block
-  font: normal 1.3rem/1.2rem 'Open Sans'
+  font: bold 1.2rem/50px 'Open Sans'
   background-color: lighten($accent, 10%)
   color: white
   width: 140px
-  height: 60px
+  height: 50px
   border: none
   // border: 1px solid green
   padding: 0
@@ -61,7 +61,7 @@
   @media screen and (min-width: 960px)
     display: inline-block
     // margin: 0px 0px 100px auto
-    margin: 0px 0px 75px 0px
+    margin: 0px 0px 50px 0px
     // float: right
 // button::after
 //   margin: 0
@@ -70,6 +70,34 @@
 //   display: block
 //   color: black
 //   background-color: pink
+a:link,
+a:visited,
+a:hover,
+a:active
+  color: white
+
+.btn--download
+  margin: 0
+.hero__download
+  // display: flex
+  position: absolute
+  top: 350px
+  left: 15px
+  @media screen and (min-width: 414px)
+    left: 40px
+  @media screen and (min-width: 700px)
+    left: 40px
+  @media screen and (min-width: 1000px)
+    left: 75px
+  // background-color: pink
+.hero__download p
+  text-align: center
+  // display: inline-block
+  color: white
+  font: bold 0.8rem/1rem 'Open Sans'
+  margin-top: 5px
+  // width: 300px
+  // background-color: pink
 
 .contact__message
   text-align: center

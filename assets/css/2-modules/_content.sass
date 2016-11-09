@@ -26,20 +26,21 @@ section.hero
     background:
       position: right -200px center
       size: cover
-  hero__content
+  .hero__content
     border-left: 5px solid $accent
     padding-left: 10px
     position: absolute
     z-index: 1
-    top: 60px
-    left: 75px
-    @media screen and (max-width: 700px)
-      top: 25px
-      left: 15px
-    @media screen and (max-width: 1000px)
+    top: 25px
+    left: 15px
+    @media screen and (min-width: 414px)
       left: 40px
-    @media screen and (max-width: 414px)
-      left: 15px
+    @media screen and (min-width: 700px)
+      top: 50px
+      left: 40px
+    @media screen and (min-width: 1000px)
+      left: 75px
+
 
   p.name
     font: bold 2.4em/1.4em 'Open Sans'
@@ -47,7 +48,7 @@ section.hero
     @media screen and (max-width: 700px)
       font: bold 1.6em/1.4em 'Open Sans'
     @media screen and (max-width: 1160px)
-      font: bold 2em/1.4em 'Open Sans'
+      font: bold 1.8em/1.4em 'Open Sans'
 
   p.quote
     font: normal 1.1em/1.5em 'Playfair Display'
@@ -60,40 +61,10 @@ section.hero
     @media screen and (max-width: 1000px)
       width: 430px
     @media screen and (max-width: 920px)
-      width: 400px
+      width: 340px
       font: normal 1.1em/1.5em 'Playfair Display'
     @media screen and (max-width: 800px)
       width: 340px
-// h1.square
-//   display: inline-block
-//   padding: 20px
-//   font-family: 'Open Sans'
-//   font-size: 1.25em
-//   font-weight: normal
-//   color: white
-//   background-color: #7ED321
-//   position: absolute
-//   top: 0
-//   left: 0
-//
-//   @media screen and (min-width: 768px)
-//     width: 100%
-//     text-indent: 10%
-//     padding: 20px 0px
-//     z-index: -1
-//
-// img.avatar
-//   display: block
-//   width: 250px
-//   margin: 0 auto
-//   margin-top: 30px
-
-
-
-// .name
-//   font: bold 1.25em/2em 'Open Sans'
-//   // text-align: center
-//   color: white
 
 h1.title
   display: inline-block
@@ -105,26 +76,6 @@ h1.title
   padding-left: 10px
   @media screen and (min-width: 768px)
     text-align: left
-
-  // position: relative
-  // overflow: hidden
-  //
-  // background-color: pink
-
-// h1.title:before
-//   margin-left: -50%
-// // h1.title:after
-// //   margin-left: 15%
-// h1.title:before,
-// h1.title:after
-//   background-color: rgba(0,0,0,0.15)
-//   content: '\a0'
-//   height: 1px
-//   position: absolute
-//   top: 50%
-//   width: 50%
-//   overflow: hidden
-
 p
   font: normal 1rem/1.7em 'Open Sans'
   margin: 0
@@ -153,8 +104,11 @@ p.bold
       position: center
       size: cover
 
-section.portfolio
+.grid
   @include clearfix
+// .grid-sizer,
+// .grid-item
+//   width: 33.3%
 .thumb-link
   display: block
   background:
@@ -174,6 +128,9 @@ section.portfolio
     width: 50%
   @media screen and (min-width: 640px)
     width: 25%
+
+button.portfolio__link--show.btn--inactive
+  margin-top: 25px
 
 .thumb-meta
   position: absolute
@@ -210,72 +167,30 @@ section.portfolio
     @media screen and (min-width: 1024px)
       font-size: 1rem
 
-.thumb-link:hover .thumb-meta
+.thumb-meta:hover
   opacity: 1
-.portfolio__link--show
-  display: inline-block
-  width: 100%
-  text-align: center
-  padding: 25px 0px
-  position: relative
-  &:after
-    margin: 0 auto
-    content: ""
-    display: block
-    width: 60px
-    height: 60px
-    border-radius: 50%
-    background:
-      image: url('../img/arrow-down.svg')
-      position: center center
-      repeat: no-repeat
+// .portfolio__link--show
+  // display: inline-block
+  // width: 100%
+  // text-align: center
+  // padding: 25px 0px
+  // position: relative
+  // &:after
+  //   margin: 0 auto
+  //   content: ""
+  //   display: block
+  //   width: 60px
+  //   height: 60px
+  //   border-radius: 50%
+  //   background:
+  //     image: url('../img/arrow-down.svg')
+  //     position: center center
+  //     repeat: no-repeat
 
-// .portfolio__link--content
-//   margin: 0 auto
-//   padding: 25px
-
-// .portfolio__link--loader
-//   margin: 0 auto
-//   padding-top: 25px
-//   display: block
-
-
-
-
-
-    // &:nth-child(1)
-    //   background-image: url(/assets/img/1.jpg)
-    // &:nth-child(2)
-    //   background-image: url(/assets/img/2.jpg)
-    // &:nth-child(3)
-    //   background-image: url(/assets/img/3.jpg)
-    // &:nth-child(4)
-    //   background-image: url(/assets/img/4.jpg)
-    // &:nth-child(5)
-    //   background-image: url(/assets/img/5.jpg)
-    // &:nth-child(6)
-    //   background-image: url(/assets/img/6.jpg)
-    // &:nth-child(7)
-    //   background-image: url(/assets/img/1.jpg)
-    // &:nth-child(8)
-    //   background-image: url(/assets/img/2.jpg)
-    // &:nth-child(9)
-    //   background-image: url(/assets/img/3.jpg)
-    // &:nth-child(10)
-    //   background-image: url(/assets/img/4.jpg)
-    // &:nth-child(11)
-    //   background-image: url(/assets/img/5.jpg)
-    // &:nth-child(12)
-    //   background-image: url(/assets/img/6.jpg)
-    // &:nth-child(13)
-    //   background-image: url(/assets/img/1.jpg)
-    // &:nth-child(14)
-    //   background-image: url(/assets/img/2.jpg)
-    // &:nth-child(15)
-    //   background-image: url(/assets/img/3.jpg)
-    // &:nth-child(4n-5)
-    //   height: 70px
-    // &:nth-child(2n)
-    //   height: 250px
-    // &:nth-child(3n)
-    //   height: 120px
+.spinner
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHdpZHRoPScxMjBweCcgaGVpZ2h0PScxMjBweCcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiIGNsYXNzPSJ1aWwtc3BpbiI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9Im5vbmUiIGNsYXNzPSJiayI+PC9yZWN0PjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUwIDUwKSI+PGcgdHJhbnNmb3JtPSJyb3RhdGUoMCkgdHJhbnNsYXRlKDM0IDApIj48Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iOCIgZmlsbD0iIzAwMCI+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0ib3BhY2l0eSIgZnJvbT0iMSIgdG89IjAuMSIgYmVnaW49IjBzIiBkdXI9IjFzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSI+PC9hbmltYXRlPjxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgdHlwZT0ic2NhbGUiIGZyb209IjEuNSIgdG89IjEiIGJlZ2luPSIwcyIgZHVyPSIxcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiPjwvYW5pbWF0ZVRyYW5zZm9ybT48L2NpcmNsZT48L2c+PGcgdHJhbnNmb3JtPSJyb3RhdGUoNDUpIHRyYW5zbGF0ZSgzNCAwKSI+PGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjgiIGZpbGw9IiMwMDAiPjxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9Im9wYWNpdHkiIGZyb209IjEiIHRvPSIwLjEiIGJlZ2luPSIwLjEycyIgZHVyPSIxcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiPjwvYW5pbWF0ZT48YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iIHR5cGU9InNjYWxlIiBmcm9tPSIxLjUiIHRvPSIxIiBiZWdpbj0iMC4xMnMiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIj48L2FuaW1hdGVUcmFuc2Zvcm0+PC9jaXJjbGU+PC9nPjxnIHRyYW5zZm9ybT0icm90YXRlKDkwKSB0cmFuc2xhdGUoMzQgMCkiPjxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSI4IiBmaWxsPSIjMDAwIj48YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvcGFjaXR5IiBmcm9tPSIxIiB0bz0iMC4xIiBiZWdpbj0iMC4yNXMiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIj48L2FuaW1hdGU+PGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJzY2FsZSIgZnJvbT0iMS41IiB0bz0iMSIgYmVnaW49IjAuMjVzIiBkdXI9IjFzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSI+PC9hbmltYXRlVHJhbnNmb3JtPjwvY2lyY2xlPjwvZz48ZyB0cmFuc2Zvcm09InJvdGF0ZSgxMzUpIHRyYW5zbGF0ZSgzNCAwKSI+PGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjgiIGZpbGw9IiMwMDAiPjxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9Im9wYWNpdHkiIGZyb209IjEiIHRvPSIwLjEiIGJlZ2luPSIwLjM3cyIgZHVyPSIxcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiPjwvYW5pbWF0ZT48YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iIHR5cGU9InNjYWxlIiBmcm9tPSIxLjUiIHRvPSIxIiBiZWdpbj0iMC4zN3MiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIj48L2FuaW1hdGVUcmFuc2Zvcm0+PC9jaXJjbGU+PC9nPjxnIHRyYW5zZm9ybT0icm90YXRlKDE4MCkgdHJhbnNsYXRlKDM0IDApIj48Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iOCIgZmlsbD0iIzAwMCI+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0ib3BhY2l0eSIgZnJvbT0iMSIgdG89IjAuMSIgYmVnaW49IjAuNXMiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIj48L2FuaW1hdGU+PGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJzY2FsZSIgZnJvbT0iMS41IiB0bz0iMSIgYmVnaW49IjAuNXMiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIj48L2FuaW1hdGVUcmFuc2Zvcm0+PC9jaXJjbGU+PC9nPjxnIHRyYW5zZm9ybT0icm90YXRlKDIyNSkgdHJhbnNsYXRlKDM0IDApIj48Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iOCIgZmlsbD0iIzAwMCI+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0ib3BhY2l0eSIgZnJvbT0iMSIgdG89IjAuMSIgYmVnaW49IjAuNjJzIiBkdXI9IjFzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSI+PC9hbmltYXRlPjxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgdHlwZT0ic2NhbGUiIGZyb209IjEuNSIgdG89IjEiIGJlZ2luPSIwLjYycyIgZHVyPSIxcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiPjwvYW5pbWF0ZVRyYW5zZm9ybT48L2NpcmNsZT48L2c+PGcgdHJhbnNmb3JtPSJyb3RhdGUoMjcwKSB0cmFuc2xhdGUoMzQgMCkiPjxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSI4IiBmaWxsPSIjMDAwIj48YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvcGFjaXR5IiBmcm9tPSIxIiB0bz0iMC4xIiBiZWdpbj0iMC43NXMiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIj48L2FuaW1hdGU+PGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJzY2FsZSIgZnJvbT0iMS41IiB0bz0iMSIgYmVnaW49IjAuNzVzIiBkdXI9IjFzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSI+PC9hbmltYXRlVHJhbnNmb3JtPjwvY2lyY2xlPjwvZz48ZyB0cmFuc2Zvcm09InJvdGF0ZSgzMTUpIHRyYW5zbGF0ZSgzNCAwKSI+PGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjgiIGZpbGw9IiMwMDAiPjxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9Im9wYWNpdHkiIGZyb209IjEiIHRvPSIwLjEiIGJlZ2luPSIwLjg3cyIgZHVyPSIxcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiPjwvYW5pbWF0ZT48YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iIHR5cGU9InNjYWxlIiBmcm9tPSIxLjUiIHRvPSIxIiBiZWdpbj0iMC44N3MiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIj48L2FuaW1hdGVUcmFuc2Zvcm0+PC9jaXJjbGU+PC9nPjwvZz48L3N2Zz4=)
+  display: none
+  width: 30px
+  height: 30px
+  margin: 0 auto
+  background-size: cover

@@ -1,9 +1,12 @@
 section.hero
-  hero__content
+  .hero__content
     p.name Tomasz Jezierski
     //- p.describtion
     p.quote  „(...)throw off the bowlines. Sail away from the safe harbor.</br>Catch the trade winds in your sails. Explore. Dream. Discover."
-
+  .hero__download
+    a(class="btn--download", alt="Pobierz CV w formacie pdf", href="http://tjezierski.pl/cv/CV.pdf", target="_blank") Pobierz CV
+    //- p lub przeczytaj poniżej
+    
 section.person
   h1.title Dane osobowe
   p.italic data urodzenia
@@ -73,11 +76,14 @@ section.portfolio
     //- - var i = 0;
     //- while (i++ < 10)
       //- .item
-    {% for post in site.posts limit:8 %}
-    a(href="" style="background-image: url(../assets/img/{{post.thumbnail}})").thumb-link
+    {% for post in site.posts limit:4 %}
+    //- .grid-sizer
+    a(href="{{post.link}}" style="background-image: url(../cv/assets/img/{{post.thumbnail}})").thumb-link.grid-item
       .thumb-meta
         .thumb-title {{post.title}}
         aside {{post.describtion}}
     {% endfor %}
     //- .portfolio__link--content
-  a(href="#").portfolio__link--show Pokaż więcej
+  .spinner
+  button.portfolio__link--show.btn--inactive Więcej
+  
