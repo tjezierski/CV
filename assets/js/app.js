@@ -21,13 +21,31 @@ $(function() {
 			data: formData
 		})
 		.done(function(response) {
+			if ($(window).width() <= 960) {
 			// Make sure that the formMessages div has the 'success' class.
+			$('.contact__form--submit').hide();
 			$(formMessages).removeClass('error');
 			$(formMessages).addClass('success');
 
 			// Set the message text.
-			$(formMessages).text(response);
+			$(formMessages).text(response).css("display", "block");
+			$(formMessages).text(response).fadeOut(3250);
+			setTimeout(function(){
+			$('.contact__form--submit').show();
+		}, 3250);
+			// $(formMessages).css('display', 'block');
+		}
+		else
+		{
+			// $('.contact__form--submit').hide();
+			$(formMessages).removeClass('error');
+			$(formMessages).addClass('success');
 
+			// Set the message text.
+			$(formMessages).text(response).css("display", "block");
+			$(formMessages).text(response).fadeOut(3250);
+
+		}
 			// Clear the form.
 			$('.contact__form--name').val('');
 			$('.contact__form--mail').val('');

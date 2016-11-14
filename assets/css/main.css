@@ -210,13 +210,6 @@ img::-moz-selection {
 body {
   -webkit-tap-highlight-color: #FFF498; }
 
-a {
-  color: #0074D9;
-  text-decoration: none;
-  outline: 0; }
-  a:hover, a:focus {
-    color: #40a6ff; }
-
 .gigantic, .huge, .large, .bigger, .big,
 h1, h2, h3, h4, h5, h6 {
   color: #222;
@@ -278,14 +271,14 @@ section.hero {
   position: relative;
   width: 100%;
   max-width: 2500px;
-  height: 450px;
-  background-image: url("../img/me_hero_wall.jpg");
-  background-position: center center;
+  height: 400px;
+  background-image: url("../img/my_header.jpg");
+  background-position: bottom center;
   background-repeat: no-repeat;
   background-size: cover; }
   @media screen and (max-width: 700px) {
     section.hero {
-      background-position: right -200px center;
+      background-position: right -150px center;
       background-size: cover; } }
   section.hero .hero__content {
     border-left: 5px solid #10beff;
@@ -305,40 +298,38 @@ section.hero {
       section.hero .hero__content {
         left: 75px; } }
   section.hero p.name {
-    font: bold 2.4em/1.4em 'Open Sans';
+    font: bold 1.5em/1.4em 'Open Sans';
     color: white; }
-    @media screen and (max-width: 700px) {
+    @media screen and (min-width: 400px) {
       section.hero p.name {
-        font: bold 1.6em/1.4em 'Open Sans'; } }
-    @media screen and (max-width: 1160px) {
+        font: bold 1.7em/1.4em 'Open Sans'; } }
+    @media screen and (min-width: 1160px) {
       section.hero p.name {
-        font: bold 1.8em/1.4em 'Open Sans'; } }
+        font: bold 2em/1.4em 'Open Sans'; } }
   section.hero p.quote {
     font: normal 1.1em/1.5em 'Playfair Display';
     width: 560px;
-    color: #303030; }
-    @media screen and (max-width: 700px) {
+    color: #303030;
+    display: none; }
+    @media screen and (min-width: 700px) {
       section.hero p.quote {
-        display: none; } }
-    @media screen and (max-width: 1120px) {
-      section.hero p.quote {
-        font: normal 1em/1.5em 'Playfair Display'; } }
-    @media screen and (max-width: 1000px) {
-      section.hero p.quote {
-        width: 430px; } }
-    @media screen and (max-width: 920px) {
-      section.hero p.quote {
+        font: normal 1.1em/1.5em 'Playfair Display';
         width: 340px;
-        font: normal 1.1em/1.5em 'Playfair Display'; } }
-    @media screen and (max-width: 800px) {
+        display: block; } }
+    @media screen and (min-width: 800px) {
       section.hero p.quote {
-        width: 340px; } }
+        font: normal 1em/1.5em 'Playfair Display';
+        width: 470px; } }
+    @media screen and (min-width: 920px) {
+      section.hero p.quote {
+        width: 470px;
+        font: normal 1.1em/1.5em 'Playfair Display'; } }
 
 h1.title {
   display: inline-block;
   margin: 50px 0px 25px 0px;
   font: bold 1.5rem/1.4em 'Open Sans';
-  text-align: center;
+  text-align: left;
   border-left: 5px solid #10beff;
   padding-left: 10px; }
   @media screen and (min-width: 768px) {
@@ -450,7 +441,20 @@ button.portfolio__link--show.btn--inactive {
   width: 30px;
   height: 30px;
   margin: 0 auto;
+  margin-top: 25px;
   background-size: cover; }
+
+.behance__message {
+  display: none;
+  text-align: center;
+  margin: 0 auto;
+  margin: 50px 0px;
+  font: normal 1rem/1.5rem 'Open Sans'; }
+
+.behance__message--bold {
+  font-weight: bold;
+  display: inline;
+  color: #10beff; }
 
 .contact__wrapper {
   display: -ms-flexbox;
@@ -505,7 +509,8 @@ button.portfolio__link--show.btn--inactive {
   text-align: center;
   margin: 0 auto;
   margin-bottom: 10px;
-  transition: background-color 0.2s ease-in-out; }
+  transition: background-color 0.2s ease-in-out;
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2); }
   .btn--inactive:active, .btn--inactive:focus, .btn--download:active, .btn--download:focus {
     outline: none;
     border: 1px solid #10beff; }
@@ -520,24 +525,25 @@ a:link,
 a:visited,
 a:hover,
 a:active {
-  color: white; }
+  text-decoration: none; }
 
 .btn--download {
   margin: 0; }
 
 .hero__download {
   position: absolute;
-  top: 350px;
-  left: 15px; }
-  @media screen and (min-width: 414px) {
+  bottom: 0px; }
+  @media screen and (min-width: 500px) {
     .hero__download {
-      left: 40px; } }
+      left: 40px;
+      top: 275px; } }
   @media screen and (min-width: 700px) {
     .hero__download {
       left: 40px; } }
   @media screen and (min-width: 1000px) {
     .hero__download {
-      left: 75px; } }
+      left: 75px;
+      top: 275px; } }
 
 .hero__download p {
   text-align: center;
@@ -548,12 +554,14 @@ a:active {
 .contact__message {
   text-align: center;
   float: none;
-  display: block;
+  display: none;
   margin: 0 auto;
-  font: bold 1rem/60px 'Open Sans'; }
+  font: bold 1rem/1.5rem 'Open Sans';
+  margin-bottom: 50px; }
   @media screen and (min-width: 960px) {
     .contact__message {
-      float: right; } }
+      float: right;
+      font: bold 1rem/60px 'Open Sans'; } }
 
 .success {
   color: #468847; }

@@ -10,16 +10,18 @@
 
 	function loopGallery(test, index, item){
 		if(test){
-			var box = $('<a href style="background-image: url('+item.source+'") class="thumb-link grid-item">');
+			var box = $('<a href='+item.link+' target="_blank" style="background-image: url(http://tjezierski.pl/cv/assets/img/'+item.source+')" class="thumb-link grid-item">');
 			var pola = $('<div class="thumb-meta"></div>');
 			var view = $('<div class="thumb-title">'+item.name+'</div>');
-			// var mask = $('<div class="thumb-meta"><div class="thumb-title"'+item.name+'<a href="img/ara_bleu.jpg" class="info fancybox" rel="group" title="'+item.id+'" ></a></div></div>');
+			var subtitle = $('<aside>'+item.description+'</aside>');
 
-			$('.grid').prepend(box);
+			$('.grid').append(box);
 			box.append(pola);
 			pola.append(view);
+			view.append(subtitle);
+			// view.append(link);
 			// view.prepend('<img src="'+item.source+'">');
-			// view.append(mask);
+
 		}
 	}
 
@@ -45,9 +47,12 @@
 			},
 			complete: function(){
 				$('.spinner').hide();
-				$('.portfolio__link--show').fadeIn();
+				$('.portfolio__link--show').hide();
+
+				// $('.portfolio__link--show').attr("disabled", false);
 			}
 		});
+		$('.behance__message').fadeIn(1500);
 	});
 
 

@@ -55,6 +55,7 @@
   // margin-left: auto
   margin-bottom: 10px
   transition: background-color 0.2s ease-in-out
+  box-shadow: 0 4px 2px -2px rgba(0,0,0,0.2)
   &:hover,
   &:focus
     background-color: $accent
@@ -74,21 +75,24 @@ a:link,
 a:visited,
 a:hover,
 a:active
-  color: white
+  text-decoration: none
 
 .btn--download
   margin: 0
 .hero__download
   // display: flex
   position: absolute
-  top: 350px
-  left: 15px
-  @media screen and (min-width: 414px)
+  bottom: 0px
+  // @media screen and (min-width: 414px)
+  //   left: 40px
+  @media screen and (min-width: 500px)
     left: 40px
+    top: 275px
   @media screen and (min-width: 700px)
     left: 40px
   @media screen and (min-width: 1000px)
     left: 75px
+    top: 275px
   // background-color: pink
 .hero__download p
   text-align: center
@@ -102,13 +106,15 @@ a:active
 .contact__message
   text-align: center
   float: none
-  display: block
+  display: none
   margin: 0 auto
-  font: bold 1rem/60px 'Open Sans'
+  font: bold 1rem/1.5rem 'Open Sans'
+  margin-bottom: 50px
   // width: 450px
   // background-color: pink
   @media screen and (min-width: 960px)
     float: right
+    font: bold 1rem/60px 'Open Sans'
 
 .success
   color: #468847

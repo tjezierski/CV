@@ -4,7 +4,7 @@ section.hero
     //- p.describtion
     p.quote  „(...)throw off the bowlines. Sail away from the safe harbor.</br>Catch the trade winds in your sails. Explore. Dream. Discover."
   .hero__download
-    a(class="btn--download", alt="Pobierz CV w formacie pdf", href="http://tjezierski.pl/cv/CV.pdf", target="_blank") Pobierz CV
+    a(class="btn--download", alt="Pobierz CV w formacie pdf", href="http://tjezierski.pl/cv/cv.pdf", target="_blank") Pobierz CV
     //- p lub przeczytaj poniżej
     
 section.person
@@ -47,7 +47,14 @@ section.edu
 
 section.work
   h1.title Przebieg kariery zawodowej
-  p.italic 04.2010 – 08.2015
+  p.italic Maj 2016
+  </br>
+  p.bold Freelancer fotograf/grafik
+  p.
+    – Fotografia dokumentalna, reportażowa, portretowa</br>
+    – Web design (projektowanie elementów stron internetowych, całych layoutów)
+    </br>    
+  p.italic 2010 – 2015
   </br>
   p.bold K-Consult Sp. z o.o. / Sigma Pro-Centrum
   p.
@@ -59,7 +66,7 @@ section.work
     – prowadzenie warsztatów fotograficznych, promujących firmę i jej asortyment – dbanie o wizerunek firmy, jak również samego salonu (prowadzenie wszystkich spraw bieżących niezbędnych do płynnego funkcjonowania firmy)  </br>
 
 section.skills
-  h1.title Umiejętności i zainteresowania
+  h1.title Umiejętności i&nbspzainteresowania
   p.
     – Bardzo dobra znajomość Photoshop, Illustrator, oraz InDesign,
     – DTP
@@ -78,12 +85,13 @@ section.portfolio
       //- .item
     {% for post in site.posts limit:4 %}
     //- .grid-sizer
-    a(href="{{post.link}}" style="background-image: url(../cv/assets/img/{{post.thumbnail}})").thumb-link.grid-item
+    a(href="{{post.link}}" style="background-image: url(../cv/assets/img/{{post.thumbnail}})" target='_blank').thumb-link.grid-item
       .thumb-meta
         .thumb-title {{post.title}}
         aside {{post.describtion}}
     {% endfor %}
     //- .portfolio__link--content
   .spinner
+  .behance__message Więcej prac znajdziesz na moim profilu #[a(href="https://www.behance.net/tomaszjezierski" target='_blank').behance__message--bold Behance]
   button.portfolio__link--show.btn--inactive Więcej
   
